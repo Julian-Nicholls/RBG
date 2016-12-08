@@ -1,0 +1,26 @@
+# Project 2 Proposal  
+
+  For my second project, I would like to create an HTML5 based game, that uses location data to create a compelling player experience. As the specifics are not yet nailed down, the following is a rough outline of what I intend to make. 
+  
+ Tools:
+ - Intel XDK: For creating iOS and Android apps with HTML5
+ - Brackets: The IDE within XDK, for editing HTML5 with real time changes in browser
+ - PHP: Used to link user queries from the app to the database via a local PHP server
+ - MAMP: Used to host PHP file
+ - _____: No PHP editor yet (Brackets?)
+ - Amazon DynamoDB: free database service provider that could scale with application success. Uses API.
+ 
+ Technical Components:
+ - Client: Distributed across all mobile devices running the application
+ - Server: Moderates access to database and calculates / updates global variables
+ - Database: Store all relevant game data for use by clients, and as backup for server
+ 
+ Game Ideas: 
+ - Players can spend a currency to place "Nodes" by capturing their location data and uploading it.
+ - Players can earn currency by visiting other Nodes.
+ - Players are given a random colour (represented with an RGB value), and they can get a new one with currency.
+ - The random colour defines their "Alignment", and this alignment is determined by the max of their colours RGB value.
+ - Their Alignment, either Red, Green, or Blue, will define player abilities within the game.
+ - Players also recieve more currency if the Node's owner shares Alignmnet with the player.
+ - Players will be rewarded for working with others of like Alignment, and work against players of other Alignments.
+ - This requires a cooperative set of rules for friendly players, and competitive otherwise.
