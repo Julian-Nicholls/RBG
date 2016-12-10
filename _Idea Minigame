@@ -1,0 +1,20 @@
+# Minigame
+
+The following bullets describe a small game that could be deployed at nodes to create player conflict.
+
+- Hexagonal game board (tiled in a way similar to Civ 5)
+- One tile in the centre is neutral, while the remaining ones are divided into three territories
+- There are three starting lines of tiles, each on the perimeter of the board
+- No two starting lines are touching, and each is well within it's affiliated territory
+- The starting lines get starting tokens, unique to each of the players faction
+- The tokens are small, pawn or checker like units labeled A-Z
+- Each token can move two tiles, and if it lands on an enemy token, the enemy is destroyed
+- The letter A-Z corresponds to a unique ability (or lack thereof)
+- A unique ability would allow the token to behave outside the standard rule set
+- An example could be a token marked G can move 4 tiles, or a token marked O can move again if it kills and enemy.
+- These abilities would have to visible to each player so they can plan accordingly.
+- Player win by destroying all other tokens, or having the most when time runs out.
+
+When a player arrives at a node, the game will pair them with two other players to start a game. 
+It could be played asyncronously, cooperatively, or with a huge number of player with the right tweaks.
+Game victories could effect global variables maintained by server, and play a role in shaping dynamic player experiences.
