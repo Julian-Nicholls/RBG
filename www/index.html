@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+<head>
+
+    <title>App Framework Kitchen Sink</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" type="text/css" href="lib/appframework/icons.css" />
+    <link rel="stylesheet" type="text/css" href="lib/appframework/af.ui.css" />
+
+    <script type="text/javascript" charset="utf-8" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/fastclick.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/appframework/appframework.ui.min.js"></script>
+        
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.20.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/login.js"></script> 
+        
+    <script src='cordova.js'></script>
+        
+    <script> 
+        function territory(red, green, blue, strength, value, LatLng) {
+            
+        this.red = red; 
+        this.green = green;
+        this.blue = blue;
+        this.strength = strength;
+        this.value = value;
+        this.LatLng = LatLng;
+        }; 
+        
+        var myCredentials = new AWS.CognitoIdentityCredentials({IdentityPoolId:'IDENTITY_POOL_ID'});
+        var myConfig = new AWS.Config({
+            credentials: myCredentials, region: 'us-east-1'
+        });
+    </script>
+        
+   
+
+
+</head>
+
+<body>
+    <div id="splashscreen" class='ui-loader heavy'>
+        App Framework
+        <br>
+        <br>
+        <span class='ui-icon ui-icon-loading spin'></span>
+        <h1>Starting app</h1>
+    </div>
+
+    <div class="view splitview">
+        
+        <header>
+            <a class="menuButton" data-left-menu="left" data-transition="cover" style="float:left"></a>
+            <h1>Title</h1>
+        </header>
+        
+        <div class="pages">
+            <div class="panel" id="login" data-title="Login" data-selected="true">
+                This is login page
+            
+            <body>
+                <div class="container">
+                <div class="main">
+                <h2>Javascript Login Form Validation</h2><hr/>
+    
+                <form id="form_id" method="post" name="myform">
+                    <label>User Name :</label></br>
+                    <input type="text" name="username" id="username"/></br>
+ 
+                    <label>Password :</label></br>
+                    <input type="password" name="password" id="password"/></br>
+ 
+                <input type="button" value="Login" id="submit" onclick="validate()"/>
+                </form>
+                <span>  
+                    <b class="note">Note : </b>For this demo use following username and password. <br/><b class="valid">User Name : username<br/>Password : password+</b></span>
+                </div>
+             
+                </div>
+                </body>
+            </div>
+    
+    
+            <div class="panel" id="makeAccount" data-title="Make Account" data-selected="false">
+                this is the "make account" page
+            </div>
+            
+        </div>
+
+        <nav id="left">
+            <div class="view active">
+                <header>
+                    <h1>Hey There</h1>
+                </header>
+                <div class="pages">
+                    <div class="panel active" id="navPage1" data-title="Foobar">
+                        <ul class="list">
+                            <li><a href="#login" onclick="$.afui.clearHistory()">Login Page</a></li>
+                            <li><a href="#makeAccount" onclick="$.afui.clearHistory()">Create Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</body>
+
+</html>

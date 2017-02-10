@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+<head>
+
+    <title>App Framework Kitchen Sink</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" type="text/css" href="lib/appframework/icons.css" />
+    <link rel="stylesheet" type="text/css" href="lib/appframework/af.ui.css" />
+
+    <script type="text/javascript" charset="utf-8" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/fastclick.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/appframework/appframework.ui.min.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="lib/login.js"></script>-->
+    <script type="text/javascript" charset="utf-8" src="lib/territoryArray.js"></script> 
+        
+    <script src='cordova.js'></script>
+
+</head>
+
+<body>
+    <div id="splashscreen" class='ui-loader heavy'>
+        RGB
+        <br>
+        <br>
+        <span class='ui-icon ui-icon-loading spin'></span>
+        <h1>Starting App \n(or something is wrong)</h1>
+    </div>
+
+    <div class="view splitview">
+        
+        <header>
+            <a class="menuButton" data-left-menu="left" data-transition="cover" style="float:left"></a>
+            <h1>Title</h1>
+        </header>
+        
+        <div class="pages">
+            <div class="panel" id="logout" data-title="Logout">
+                This is the logout page
+            </div>
+            <div class="panel" id="createTerritory" data-title="Territory Page">
+                This is the create territory page
+            </div>
+            <div class="panel" id="mapPage" data-title="Map Page" data-selected="true">
+                <h2>This is the MF map</h2>
+                <div id="map" style="width:100%;height:500px"></div>
+                
+                <script type="text/javascript"> fakeTerritories(); </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUiTIn4muMq4UkTZJHZP1BbYHuVwZqzX8&callback=myMap" async defer></script>
+                
+            </div>
+        </div>
+
+        <nav id="left">
+            <div class="view active">
+                <header>
+                    <h1>Menu</h1>
+                </header>
+                <div class="pages">
+                    <div class="panel active" id="navPage1" data-title="Foobar">
+                        <ul class="list">
+                            <li><a href="#logout" onclick="$.afui.clearHistory()">Logout Page</a>
+                            </li>
+                            
+                            <li><a href="#createTerritory" onclick="$.afui.clearHistory()">Create Territory</a>
+                            </li>
+                            
+                            <li><a href="#mapPage" onclick="$.afui.clearHistory()">Map Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</body>
+
+</html>
